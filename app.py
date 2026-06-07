@@ -178,7 +178,7 @@ fig_income.update_layout(
 st.plotly_chart(fig_income, use_container_width=True)
 
 # 피로도 역설 위젯
-st.info("📌 **[심사위원 방어용] 피로도 역설(Fatigue Paradox) 해설**")
+st.info("📌 **피로도 역설(Fatigue Paradox) 해설**")
 with st.expander("❓ 소득 1구간의 피로도 수치(2.27)가 고소득층보다 양호하게 나오는 이유"):
     st.markdown("""
     이 수치는 저소득층이 실제로 덜 피곤하다는 의미가 아닙니다.
