@@ -11,7 +11,40 @@ st.markdown("""
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
     * { font-family: 'Pretendard', sans-serif; }
     .stApp { background-color: #0B0E14; color: #FFFFFF; }
-    
+# ---------------------------------------------------------
+# [추가 코드] 사이버펑크 스타일 메인 타이틀 CSS (기존 <style> 태그 내부에 추가)
+# ---------------------------------------------------------
+"""
+.main-title-container {
+    padding: 20px 0 10px 0;
+    border-bottom: 2px solid #30363D;
+    margin-bottom: 35px;
+}
+.main-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #00F2FF 0%, #FF007F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+.main-subtitle {
+    color: #8B949E;
+    font-size: 1.1rem;
+    margin-top: 8px;
+    font-weight: 500;
+}
+"""
+
+# ---------------------------------------------------------
+# [추가 코드] 최상단 화면 출력부 (st.set_page_config 및 스타일 정의 바로 아래에 삽입)
+# ---------------------------------------------------------
+st.markdown("""
+    <div class='main-title-container'>
+        <div class='main-title'>Housing-Transit Paradox Analysis</div>
+        <div class='main-subtitle'>서울의 주거비용과 경기도의 교통에 치이는 사람들</div>
+    </div>
+    """, unsafe_allow_html=True)    
     /* 고대비 KPI 카드 */
     .metric-container {
         background: #161B22; border-radius: 10px; padding: 25px;
