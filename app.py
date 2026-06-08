@@ -6,45 +6,34 @@ import plotly.express as px
 # 1. 전역 UI/UX 설정: 고대비 사이버 펑크 테마
 st.set_page_config(page_title="Housing-Transit Paradox Analysis", layout="wide")
 
+# 사이버펑크 스타일 및 기본 UI 요소 CSS 정의 (기존 오류 수정 및 통합)
 st.markdown("""
     <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
     * { font-family: 'Pretendard', sans-serif; }
     .stApp { background-color: #0B0E14; color: #FFFFFF; }
-# ---------------------------------------------------------
-# [추가 코드] 사이버펑크 스타일 메인 타이틀 CSS (기존 <style> 태그 내부에 추가)
-# ---------------------------------------------------------
-"""
-.main-title-container {
-    padding: 20px 0 10px 0;
-    border-bottom: 2px solid #30363D;
-    margin-bottom: 35px;
-}
-.main-title {
-    font-size: 2.8rem;
-    font-weight: 900;
-    background: linear-gradient(90deg, #00F2FF 0%, #FF007F 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -1px;
-}
-.main-subtitle {
-    color: #8B949E;
-    font-size: 1.1rem;
-    margin-top: 8px;
-    font-weight: 500;
-}
-"""
-
-# ---------------------------------------------------------
-# [추가 코드] 최상단 화면 출력부 (st.set_page_config 및 스타일 정의 바로 아래에 삽입)
-# ---------------------------------------------------------
-st.markdown("""
-    <div class='main-title-container'>
-        <div class='main-title'>Housing-Transit Paradox Analysis</div>
-        <div class='main-subtitle'>서울의 주거비용과 경기도의 교통에 치이는 사람들</div>
-    </div>
-    """, unsafe_allow_html=True)    
+    
+    /* 메인 타이틀 CSS */
+    .main-title-container {
+        padding: 20px 0 10px 0;
+        border-bottom: 2px solid #30363D;
+        margin-bottom: 35px;
+    }
+    .main-title {
+        font-size: 2.8rem;
+        font-weight: 900;
+        background: linear-gradient(90deg, #00F2FF 0%, #FF007F 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -1px;
+    }
+    .main-subtitle {
+        color: #8B949E;
+        font-size: 1.1rem;
+        margin-top: 8px;
+        font-weight: 500;
+    }
+    
     /* 고대비 KPI 카드 */
     .metric-container {
         background: #161B22; border-radius: 10px; padding: 25px;
@@ -71,6 +60,14 @@ st.markdown("""
     .stCodeBlock { border: 1px solid #30363D !important; border-radius: 8px !important; }
     </style>
     """, unsafe_allow_html=True)
+
+# 최상단 화면 타이틀 출력부
+st.markdown("""
+    <div class='main-title-container'>
+        <div class='main-title'>Housing-Transit Paradox Analysis</div>
+        <div class='main-subtitle'>서울의 주거비용과 경기도의 교통에 치이는 사람들</div>
+    </div>
+    """, unsafe_allow_html=True) 
 
 # 실증 분석 데이터 상수 정의
 MIN_WAGE_2026 = 10320
@@ -234,4 +231,5 @@ FROM time_budget
 GROUP BY "피곤함정도코드"
 ORDER BY "피곤함정도코드" ASC;""", language="sql")
 
+# 최종 결론 출력부 (구문 오류 완벽 교정)
 st.markdown("<div class='insight-box' style='text-align:center;'>💡 <b>최종 분석 결론:</b> 주거비 절감액의 64%가 보이지 않는 시간 비용으로 소멸됩니다. 경기도 이주는 '시간 주권'의 저당입니다.</div>", unsafe_allow_html=True)
